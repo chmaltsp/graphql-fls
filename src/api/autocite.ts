@@ -7,7 +7,6 @@ import {
 
 import camelcaseKeys from 'camelcase-keys';
 
-const autociteToken = '3940b21b47df7ae8ac783ad92263361f';
 export class AutociteApi extends RESTDataSource {
   constructor() {
     super();
