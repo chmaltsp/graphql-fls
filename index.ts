@@ -1,4 +1,5 @@
 import { AutociteApi } from './src/api/autocite';
+import { CfeApi } from './src/api/cfeApi';
 
 import { typeDefs } from './src/types';
 
@@ -23,6 +24,9 @@ const books = [
 const resolvers = {
   Query: {
     books: () => books,
+    getToken: async (_source: any, _args: any, { dataSources }: any) => {
+      return dataSources.cfeApi.getToken();
+    },
     autocite: async (_source: any, _args: any, { dataSources }: any) => {
       const data = await dataSources.autoCiteApi.citeWebsite(_args.url);
 
@@ -40,6 +44,7 @@ const server = new ApolloServer({
   resolvers,
   dataSources: () => {
     return {
+      cfeApi: new CfeApi(),
       autoCiteApi: new AutociteApi()
     };
   }

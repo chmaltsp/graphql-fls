@@ -1,4 +1,5 @@
 import { autoCiteTypes } from './autocite';
+import { cfeTypes } from './cfe';
 import { gql } from 'apollo-server';
 
 const rootTypes = gql`
@@ -16,7 +17,8 @@ const rootTypes = gql`
     books: [Book]
     # You can refer to all other types in your schema because they all get combined.
     autocite(url: String): AutociteResult
+    getToken: AuthResponse
   }
 `;
 
-export const typeDefs = [rootTypes, autoCiteTypes];
+export const typeDefs = [rootTypes, autoCiteTypes, cfeTypes];
