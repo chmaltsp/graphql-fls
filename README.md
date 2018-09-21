@@ -9,10 +9,8 @@ yarn dev
 
 ### Tech:
 
-Apollo Server 2
-Typescript
-
-> **A simple, straight forward guide to building a GraphQL server with Apollo Server.**
+- Apollo Server 2
+- Typescript
 
 ## Documentation
 
